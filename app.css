@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e3e3e3;
+}
+
+header {
+  background-color: #1a1a1a;
+  height: 56px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & input {
+    background: linear-gradient(0deg, #222222, #222222),
+      linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+    background-color: #222222;
+    border: 1px solid #ffffff33;
+    padding: 5px;
+    outline: none;
+    border-radius: 5px;
+  }
+
+  & input:hover {
+    border: 1px solid white;
+  }
+
+  & input:active {
+    border: 3px solid white;
+  }
+
+  & div.personal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+
+    & svg,
+    button {
+      padding: 5px;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #222222;
+      color: #ffffff33;
+    }
+
+    & button {
+      border: none;
+    }
+
+    & button:focus,
+    svg:hover {
+      border: 2px solid blue;
+    }
+
+    & svg:hover,
+    button:hover {
+      background-color: gray;
+    }
+
+    & svg {
+      background-color: #222222;
+    }
+
+    & span {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
+
+    & button {
+      color: #fff;
+      margin: -2px;
+      padding: 12px;
+    }
+  }
+}
+
+svg {
+  width: 40px;
+  cursor: pointer;
+}
+
+main {
+  padding: 16px 0;
+
+  & button {
+    border-radius: 8px;
+    padding: 5px;
+    border: none;
+  }
+}
+
+main div.heading {
+  background: linear-gradient(0deg, #222222, #222222),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+  color: #ffffff;
+  padding: 16px;
+  position: relative;
+}
+
+section.guidelines {
+  margin: 16px 0;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+
+  & header {
+    background-color: #ffffff;
+  }
+
+  & .setup-guide {
+    padding: 0 16px;
+    margin-top: 16px;
+  }
+}
+
+/* SMALL SCREEN */
+@media screen and (max-width: 767px) {
+  .davii-collections {
+    display: none;
+  }
+
+  .select-plan button {
+    margin-top: 10px;
+  }
+
+  .select-plan svg {
+    position: absolute;
+    top: 15;
+    right: 30;
+    width: 25px;
+  }
+}
+
+/* LARGE SCREEN */
+@media screen and (min-width: 768px) {
+  main {
+    display: grid;
+    margin: 0 5rem;
+    max-width: 800px;
+  }
+
+  section.guidelines,
+  .guidelines header {
+    border-radius: 10px;
+  }
+
+  main div.heading,
+  .select-plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
