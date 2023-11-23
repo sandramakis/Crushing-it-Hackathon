@@ -8,6 +8,48 @@ body {
   background-color: #e3e3e3;
 }
 
+/* GENERAL STYLES  */
+svg {
+  width: 40px;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+button:focus,
+svg:focus {
+  border: 1.5px solid #005bd3;
+  /* border-width: 1.5px 1.5px 0px 1.5px; */
+}
+
+button.select-plan {
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+
+button.select-plan:hover {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    linear-gradient(0deg, #f7f7f7, #f7f7f7);
+}
+
+button.select-plan:active {
+  background-color: #e2e2e2;
+}
+
+/* SEARCH BAR ICON
+
+position: absolute;
+left: 17.5%;
+right: 17.5%;
+top: 17.5%;
+bottom: 17.5%;
+
+background: #4A4A4A;
+*/
+
 header {
   background-color: #1a1a1a;
   height: 56px;
@@ -19,19 +61,27 @@ header {
   & input {
     background: linear-gradient(0deg, #222222, #222222),
       linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
-    background-color: #222222;
+    background-color: #616161;
     border: 1px solid #ffffff33;
-    padding: 5px;
+    padding: 8px;
+    gap: 6px;
     outline: none;
     border-radius: 5px;
+    color: #ffffff;
   }
 
   & input:hover {
-    border: 1px solid white;
+    border: 1px solid #e1e1e1;
   }
 
   & input:active {
-    border: 3px solid white;
+    border: 2px solid white;
+    background-color: #303030;
+  }
+
+  & input:focus {
+    background: linear-gradient(0deg, #ffffff, #ffffff),
+      linear-gradient(0deg, #303030, #303030);
   }
 
   & div.personal {
@@ -52,11 +102,6 @@ header {
 
     & button {
       border: none;
-    }
-
-    & button:focus,
-    svg:hover {
-      border: 2px solid blue;
     }
 
     & svg:hover,
@@ -82,27 +127,22 @@ header {
   }
 }
 
-svg {
-  width: 40px;
-  cursor: pointer;
-}
-
 main {
   padding: 16px 0;
 
   & button {
     border-radius: 8px;
-    padding: 5px;
+    padding: 6px 12px;
     border: none;
   }
-}
 
-main div.heading {
-  background: linear-gradient(0deg, #222222, #222222),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
-  color: #ffffff;
-  padding: 16px;
-  position: relative;
+  & div.heading {
+    background: linear-gradient(0deg, #222222, #222222),
+      linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+    color: #ffffff;
+    padding: 16px;
+    position: relative;
+  }
 }
 
 section.guidelines {
@@ -112,6 +152,38 @@ section.guidelines {
 
   & header {
     background-color: #ffffff;
+
+    & .arrow-down {
+      padding: 5px;
+    }
+
+    & .arrow-down:hover {
+      opacity: 0.7;
+      background-color: #e3e3e3;
+    }
+  }
+
+  /* GENERAL styles inside section.guidelines */
+  & a {
+    text-decoration: none;
+  }
+
+  & button {
+    box-shadow: 0px 0px 0px 1.5px #333333;
+    box-shadow: 0px 1px 0px 1.5px #333333;
+    box-shadow: 0px 2px 0px 0px #000000;
+    background: #404040;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2)
+      ),
+      linear-gradient(0deg, #404040, #404040);
+  }
+
+  & button:hover {
+    background: #2a2a2a;
+    color: #f6f3f6;
   }
 
   & .setup-guide {
@@ -120,8 +192,66 @@ section.guidelines {
   }
 }
 
+div.to-dos {
+  padding: 0 16px;
+  gap: 2px;
+
+  & .to-do {
+    padding: 8px 8px 12px 12px;
+  }
+
+  & input {
+    height: 24px;
+    width: 24px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border-radius: 100%;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color: #f3f3f3;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="%238A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/></svg>');
+    background-size: cover;
+  }
+
+  & input:checked {
+    background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11.9996" cy="12" r="10" fill="%231C181D" stroke="%231C181D" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16.8163 8.64149C17.0604 8.88557 17.0604 9.2813 16.8163 9.52538L11.3997 14.942C11.1556 15.1861 10.7599 15.1861 10.5158 14.942L7.80745 12.2337C7.56337 11.9896 7.56337 11.5939 7.80745 11.3498C8.05153 11.1057 8.44725 11.1057 8.69133 11.3498L10.9577 13.6162L15.9324 8.64149C16.1765 8.39742 16.5723 8.39742 16.8163 8.64149Z" fill="white"/></svg>');
+    background-size: cover;
+  }
+
+  & input:hover {
+    background-image: url('data:image/svg+xml, <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ><circle cx="12" cy="12" r="10" stroke="%238A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" /></svg>');
+    background-size: cover;
+  }
+}
+
+/* SPAN  */
+span.import-product {
+  background: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-top: 16px;
+}
+
+span.import-product:hover {
+  background: #e7e7e7;
+  color: #323232;
+  gap: 8px;
+}
+
 /* SMALL SCREEN */
 @media screen and (max-width: 767px) {
+  header svg.icon-desktop {
+    display: none;
+  }
+  
+  div.select-plan svg {
+    width: 36;
+    height: 36;
+  }
+
   .davii-collections {
     display: none;
   }
@@ -132,18 +262,38 @@ section.guidelines {
 
   .select-plan svg {
     position: absolute;
-    top: 15;
-    right: 30;
+    top: 25;
+    right: 20;
     width: 25px;
+  }
+
+  .to-dos img {
+    display: none;
   }
 }
 
 /* LARGE SCREEN */
 @media screen and (min-width: 768px) {
+  header svg.icon-phone {
+    display: none;
+  }
+
   main {
     display: grid;
-    margin: 0 5rem;
+    place-items: center;
+    margin: 0 20vw;
     max-width: 800px;
+  }
+
+  div.select-plan svg {
+    width: 32;
+    height: 32;
+  }
+
+  .heading section.guidelines {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   section.guidelines,
@@ -152,7 +302,8 @@ section.guidelines {
   }
 
   main div.heading,
-  .select-plan {
+  .select-plan,
+  div.write-up {
     display: flex;
     justify-content: space-between;
     align-items: center;
