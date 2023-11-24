@@ -6,6 +6,8 @@
 
 body {
   background-color: #e3e3e3;
+  font-family: sans-serif;
+  font-size: 12px;
 }
 
 /* GENERAL STYLES  */
@@ -50,6 +52,7 @@ bottom: 17.5%;
 background: #4A4A4A;
 */
 
+/* HEADER SECTION  */
 header {
   background-color: #1a1a1a;
   height: 56px;
@@ -127,6 +130,7 @@ header {
   }
 }
 
+/* MAIN SECTION  */
 main {
   padding: 16px 0;
 
@@ -145,6 +149,7 @@ main {
   }
 }
 
+/* GUIDELINES SECTION */
 section.guidelines {
   margin: 16px 0;
   padding-bottom: 10px;
@@ -192,12 +197,15 @@ section.guidelines {
   }
 }
 
+/* TO=DO SECTION */
 div.to-dos {
   padding: 0 16px;
   gap: 2px;
 
   & .to-do {
     padding: 8px 8px 12px 12px;
+    display: flex;
+    gap: 50px;
   }
 
   & input {
@@ -219,11 +227,16 @@ div.to-dos {
   & input:checked {
     background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11.9996" cy="12" r="10" fill="%231C181D" stroke="%231C181D" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16.8163 8.64149C17.0604 8.88557 17.0604 9.2813 16.8163 9.52538L11.3997 14.942C11.1556 15.1861 10.7599 15.1861 10.5158 14.942L7.80745 12.2337C7.56337 11.9896 7.56337 11.5939 7.80745 11.3498C8.05153 11.1057 8.44725 11.1057 8.69133 11.3498L10.9577 13.6162L15.9324 8.64149C16.1765 8.39742 16.5723 8.39742 16.8163 8.64149Z" fill="white"/></svg>');
     background-size: cover;
+    transition-delay: 0.2s;
   }
 
   & input:hover {
     background-image: url('data:image/svg+xml, <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ><circle cx="12" cy="12" r="10" stroke="%238A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" /></svg>');
     background-size: cover;
+  }
+
+  & .write-up {
+    display: none;
   }
 }
 
@@ -246,7 +259,7 @@ span.import-product:hover {
   header svg.icon-desktop {
     display: none;
   }
-  
+
   div.select-plan svg {
     width: 36;
     height: 36;
@@ -308,4 +321,8 @@ span.import-product:hover {
     justify-content: space-between;
     align-items: center;
   }
+}
+
+.display div.write-up {
+  display: flex;
 }
