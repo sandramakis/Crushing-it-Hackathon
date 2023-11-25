@@ -142,12 +142,27 @@
         <section class="guidelines">
           <header>
             <p><b>Setup guide</b></p>
-            <img
+            <button
+              id="arrow-down"
               class="arrow-down"
-              style="width: 20px; height: 20px; cursor: pointer"
-              src="img/down-arrow.png"
-              alt="arrow-down"
-            />
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="to-dos"
+            >
+              <img
+                style="width: 10px; height: 10px; cursor: pointer"
+                src="img/down-arrow.png"
+                alt="arrow-down"
+              />
+
+              <img
+                style="width: 15px; height: 15px; cursor: pointer"
+                class="arrow-up"
+                id="arrow-up"
+                src="img/icon-arrow-up.svg"
+                alt="arrow-up"
+              />
+            </button>
           </header>
 
           <div class="setup-guide">
@@ -158,14 +173,19 @@
             </div>
           </div>
 
-          <div class="to-dos">
+          <div
+            class="to-dos"
+            id="to-dos"
+            role="menu"
+            aria-labelledby="arrow-down"
+          >
             <!-- To-do 1 -->
             <div class="to-do to-do--1">
               <input type="checkbox" name="to-do-1" id="" />
               <label for="to-do-1">
                 <b>Customize your online store</b>
 
-                <div class="write-up">
+                <div class="write-up" role="todo-item">
                   <div>
                     <p>
                       Choose a theme and add your logo, colors and images to
@@ -184,7 +204,7 @@
             </div>
 
             <!-- To-do 2 -->
-            <div class="to-do to-do--2">
+            <div class="to-do to-do--2" role="todo-item">
               <input type="checkbox" name="to-do-2" id="" />
               <label for="to-do-2">
                 <b>Add your first product</b>
@@ -211,7 +231,7 @@
             </div>
 
             <!-- To-do 3 -->
-            <div class="to-do to-do--3">
+            <div class="to-do to-do--3" role="todo-item">
               <input type="checkbox" name="to-do-3" id="" />
               <label for="to-do-3">
                 <b>Add a custom domain</b>
@@ -236,7 +256,7 @@
             </div>
 
             <!-- To-do 4 -->
-            <div class="to-do to-do--4">
+            <div class="to-do to-do--4" role="todo-item">
               <input type="checkbox" name="to-do-4" id="" />
               <label for="to-do-4">
                 <b>Name your store</b>
@@ -261,7 +281,7 @@
             </div>
 
             <!-- To-do 5 -->
-            <div class="to-do to-do--5">
+            <div class="to-do to-do--5" role="todo-item">
               <input type="checkbox" name="to-do-5" id="" />
               <label for="to-do-5">
                 <b>Set up a payment provider</b>

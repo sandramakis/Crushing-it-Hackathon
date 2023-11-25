@@ -159,12 +159,22 @@ section.guidelines {
     background-color: #ffffff;
 
     & .arrow-down {
-      padding: 5px;
+      display: block;
+    }
+
+    & .arrow-down,
+    .arrow-up {
+      background: #ffffff;
+      box-shadow: none;
     }
 
     & .arrow-down:hover {
       opacity: 0.7;
       background-color: #e3e3e3;
+    }
+
+    & .arrow-up {
+      display: none;
     }
   }
 
@@ -198,9 +208,10 @@ section.guidelines {
 }
 
 /* TO=DO SECTION */
-div.to-dos {
+div#to-dos {
   padding: 0 16px;
   gap: 2px;
+  display: none;
 
   & .to-do {
     padding: 8px 8px 12px 12px;
@@ -325,4 +336,11 @@ span.import-product:hover {
 
 .display div.write-up {
   display: flex;
+}
+
+/*ON  DISPLAY */
+
+#to-dos.menu-display {
+  display: block;
+  transition: ease-in 0.1s;
 }
