@@ -12,10 +12,10 @@ arrowDown.addEventListener("click", function () {
 
   todoParent.classList.toggle("menu-display");
   arrowUp.style.display = "block";
-  // arrowDown.style.display = "none";
 
   if (isExpanded) {
     arrowDown.ariaExpanded = "false";
+    arrowDown.style.display = "none";
   } else {
     arrowDown.ariaExpanded = "true";
   }
