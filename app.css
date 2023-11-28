@@ -281,6 +281,7 @@ section.guidelines {
     align-items: flex-start;
     align-self: stretch;
     background-color: #fff;
+    margin-bottom: 16px;
 
     & div.setup-guide {
       max-width: 376px;
@@ -298,43 +299,22 @@ section.guidelines {
       line-height: 140%; /* 19.6px */
     }
 
+    & .arrow {
+      width: 20px;
+      height: 20px;
+      color: #4a4a4a;
+    }
+
     & .arrow-down {
       padding: 4px;
-      align-items: flex-start;
-      gap: 8px;
     }
 
     & .arrow-up {
       display: none;
+      padding: 4px;
+      align-items: flex-start;
+      gap: 8px;
     }
-  }
-
-  /* GENERAL styles inside section.guidelines */
-  & a {
-    text-decoration: none;
-  }
-
-  & button {
-    box-shadow: 0px 0px 0px 1.5px #333333;
-    box-shadow: 0px 1px 0px 1.5px #333333;
-    box-shadow: 0px 2px 0px 0px #000000;
-    background: #404040;
-    background: linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0.2),
-        rgba(255, 255, 255, 0.2)
-      ),
-      linear-gradient(0deg, #404040, #404040);
-  }
-
-  & button:hover {
-    background: #2a2a2a;
-    color: #f6f3f6;
-  }
-
-  & .setup-guide {
-    padding: 0 16px;
-    margin-top: 16px;
   }
 }
 
@@ -342,12 +322,48 @@ section.guidelines {
 div#to-dos {
   padding: 0 16px;
   gap: 2px;
-  display: none;
+  /* display: none; */
 
   & .to-do {
-    padding: 8px 8px 12px 12px;
+    border-radius: 10px;
+    background: #f3f3f3;
+    padding: 8px;
+  }
+
+  & .to-do label {
+    color: var(--font-dark, var(--grey-g-200, #303030));
+
+    /* Text-13/medium */
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 18.2px */
+  }
+
+  & .to-do .write-up {
     display: flex;
-    gap: 50px;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  & .to-do p {
+    color: var(--font-mid-2, #616161);
+
+    /* Text-13/medium */
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 18.2px */
+  }
+
+  & .to-do a {
+    color: var(--states-focused, #005bd3);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    text-decoration: none;
   }
 
   & input {
@@ -375,10 +391,6 @@ div#to-dos {
   & input:hover {
     background-image: url('data:image/svg+xml, <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ><circle cx="12" cy="12" r="10" stroke="%238A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" /></svg>');
     background-size: cover;
-  }
-
-  & .write-up {
-    display: none;
   }
 }
 
@@ -560,6 +572,26 @@ span.import-product:hover {
     align-items: center;
     border-radius: 8px;
     background: var(--grey-grey-300, #1a1a1a);
+  }
+
+  div.to-dos .to-do {
+    display: flex;
+    padding: 8px 8px 12px 8px;
+    align-items: center;
+    gap: 96px;
+    align-self: stretch;
+    width: 100%;
+    height: 139px;
+
+    & img {
+      width: 156.145px;
+      height: 120px;
+    }
+
+    & input {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 

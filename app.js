@@ -1,32 +1,32 @@
-"use strict";
+// "use strict";
 
-const todos = document.querySelectorAll(".to-dos .to-do"),
-  writeups = document.querySelectorAll(".write-up");
+// const todos = document.querySelectorAll(".to-dos .to-do"),
+//   writeups = document.querySelectorAll(".write-up");
 
-const arrowDown = document.querySelector("#arrow-down");
-const todoParent = document.querySelector("#to-dos");
-const arrowUp = document.querySelector("#arrow-up");
+// const arrowDown = document.querySelector("#arrow-down");
+// const todoParent = document.querySelector("#to-dos");
+// const arrowUp = document.querySelector("#arrow-up");
 
-arrowDown.addEventListener("click", function () {
-  const isExpanded = arrowDown.attributes["aria-expanded"].value;
+// arrowDown.addEventListener("click", function () {
+//   const isExpanded = arrowDown.attributes["aria-expanded"].value;
 
-  todoParent.classList.toggle("menu-display");
-  arrowUp.style.display = "block";
+//   todoParent.classList.toggle("menu-display");
+//   arrowUp.style.display = "block";
 
-  if (isExpanded) {
-    arrowDown.ariaExpanded = "false";
-    arrowDown.style.display = "none";
-  } else {
-    arrowDown.ariaExpanded = "true";
-  }
-});
+//   if (isExpanded) {
+//     arrowDown.ariaExpanded = "false";
+//     arrowDown.style.display = "none";
+//   } else {
+//     arrowDown.ariaExpanded = "true";
+//   }
+// });
 
-let isClicked = false;
+// let isClicked = false;
 
-// function displayTodo(e) {
-//   todos.forEach((todo, idx) => {
+// // function displayTodo(e) {
+// //   todos.forEach((todo, idx) => {
 
-//   });
-// }
+// //   });
+// // }
 
-todos.forEach((todo) => todo.addEventListener("click", displayTodo));
+// todos.forEach((todo) => todo.addEventListener("click", displayTodo));
