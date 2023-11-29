@@ -329,47 +329,81 @@ div#to-dos {
   & .to-do {
     border-radius: 10px;
     padding: 8px;
-  }
 
-  & to-do input[type="checkbox"] {
-    width: 24px;
-    height: 24px;
-  }
+    & label {
+      color: var(--font-dark, var(--grey-g-200, #303030));
 
-  & .to-do label {
-    color: var(--font-dark, var(--grey-g-200, #303030));
+      /* Text-13/medium */
+      font-family: Inter;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 18.2px */
+    }
 
-    /* Text-13/medium */
-    font-family: Inter;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 140%; /* 18.2px */
-  }
+    & input[type="checkbox"] {
+      width: 24px;
+      height: 24px;
+    }
 
-  & .to-do .write-up {
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
-  }
+    & .write-up {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
 
-  & .to-do p {
-    color: var(--font-mid-2, #616161);
+    & p {
+      color: var(--font-mid-2, #616161);
 
-    /* Text-13/medium */
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 140%; /* 18.2px */
-  }
+      /* Text-13/medium */
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%; /* 18.2px */
+      margin: 16px 0;
+    }
 
-  & .to-do a {
-    color: var(--states-focused, #005bd3);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 140%;
-    text-decoration: none;
+    & a {
+      color: var(--states-focused, #005bd3);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 140%;
+      text-decoration: none;
+    }
+
+    & button {
+      border-radius: 6px;
+      border-top: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+      border-right: 1.5px solid
+        var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+      border-left: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+      background: #404040;
+      box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
+        0px 2px 0px 0px #000;
+
+      color: var(--font-light, #f6f3f6);
+
+      /* Text-12/Semi bold */
+      font-family: Inter;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 130%; /* 15.6px */
+    }
+
+    & button.import-product--btn {
+      color: var(--font-dark, #323232);
+
+      /* Text-12/Semi bold */
+      font-family: Inter;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 130%; /* 15.6px */
+      background: none;
+      box-shadow: none;
+    }
   }
 
   & input {
@@ -388,6 +422,8 @@ div#to-dos {
     background-size: cover;
   }
 
+  /* Input states */
+
   & input:checked {
     background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11.9996" cy="12" r="10" fill="%231C181D" stroke="%231C181D" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M16.8163 8.64149C17.0604 8.88557 17.0604 9.2813 16.8163 9.52538L11.3997 14.942C11.1556 15.1861 10.7599 15.1861 10.5158 14.942L7.80745 12.2337C7.56337 11.9896 7.56337 11.5939 7.80745 11.3498C8.05153 11.1057 8.44725 11.1057 8.69133 11.3498L10.9577 13.6162L15.9324 8.64149C16.1765 8.39742 16.5723 8.39742 16.8163 8.64149Z" fill="white"/></svg>');
     background-size: cover;
@@ -397,6 +433,58 @@ div#to-dos {
   & input:hover {
     background-image: url('data:image/svg+xml, <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" ><circle cx="12" cy="12" r="10" stroke="%238A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" /></svg>');
     background-size: cover;
+  }
+
+  /* Button states */
+  & button:hover {
+    border-radius: 6px;
+    border-top: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+    border-right: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+    border-left: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+    background: #2a2a2a;
+    box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
+      0px 2px 0px 0px #000;
+  }
+
+  & button:active {
+    border-radius: 6px;
+    background: #2b2b2b;
+    box-shadow: 0px 0px 0px 1.5px #333, 0px 3px 0px 0px #000 inset;
+    color: var(--font-light, #f6f3f6);
+    transition: all 0.5s ease-in;
+  }
+
+  & button:focus {
+    border-radius: 6px;
+    border-top: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+    border-right: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+    border-left: 1.5px solid var(--stroke-light-100, rgba(255, 255, 255, 0.2));
+    background: #404040;
+    box-shadow: 0px 0px 0px 5px #005bd3, 0px 0px 0px 3px #fff,
+      0px 0px 0px 1.5px #333;
+    color: var(--font-light, #f6f3f6);
+  }
+
+  & .import-product--btn:hover {
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: #f7f7f7;
+    box-shadow: 0px -1px 0px 0px #b5b5b5 inset;
+  }
+
+  & .import-product--btn:active {
+    border-radius: 6px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 1.5px 0px #e2e2e2 inset;
+    transition: all 0.5s ease-in;
+  }
+
+  & button.import-product--btn:focus {
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: var(--White, #fff);
+    box-shadow: 0px 0px 0px 3px #005bd3, 0px 0px 0px 1px #fff,
+      0px -1px 0px 0px #b5b5b5 inset;
   }
 }
 
