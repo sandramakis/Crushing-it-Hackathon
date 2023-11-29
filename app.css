@@ -8,13 +8,12 @@ body {
   font-family: "Inter", sans-serif;
   background-color: #e3e3e3;
   font-size: 12px;
-  /* display: flex;
-  width: 1440px;
+  display: flex;
+  max-width: 1440px;
   padding-bottom: 0px;
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  background: var(--Background, #f1f1f1); */
 }
 
 /* GENERAL STYLES  */
@@ -54,13 +53,13 @@ header.main-heading {
   align-items: center;
   background: var(--grey-grey-300, #1a1a1a);
 
-  /* SVG and button in the header */
-  & svg,
-  button {
-    cursor: pointer;
-    background-color: #222222;
-    border: none;
-    color: #ffffff33;
+  & .profile {
+    display: flex;
+    padding: 2px 2px 2px 8px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 8px;
+    border-radius: 8px;
   }
 
   /* input and input states */
@@ -96,8 +95,6 @@ header.main-heading {
   /* div.profile section */
   & div.profile {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
     gap: 8px;
     flex: 1 0 0;
 
@@ -105,8 +102,6 @@ header.main-heading {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 142px;
-      height: 32px;
 
       & span.davii {
         color: #e3e3e3;
@@ -204,6 +199,7 @@ main {
     padding: 12px 8px 12px 16px;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 12px;
     border-radius: 8px;
     background: var(--grey-grey-300, #1a1a1a);
     color: #e3e3e3;
@@ -220,6 +216,10 @@ main {
       width: 20px;
       height: 20px;
     }
+  }
+
+  & .select-plan {
+    gap: 8px;
   }
 
   & .select-plan button {
@@ -279,9 +279,11 @@ section.guidelines {
     padding: 8px;
     justify-content: space-between;
     align-items: flex-start;
-    align-self: stretch;
     background-color: #fff;
-    margin-bottom: 16px;
+
+    & button {
+      background: none;
+    }
 
     & div.setup-guide {
       max-width: 376px;
@@ -302,7 +304,6 @@ section.guidelines {
     & .arrow {
       width: 20px;
       height: 20px;
-      color: #4a4a4a;
     }
 
     & .arrow-down {
@@ -321,13 +322,18 @@ section.guidelines {
 /* TO=DO SECTION */
 div#to-dos {
   padding: 0 16px;
+  margin-top: 16px;
   gap: 2px;
   /* display: none; */
 
   & .to-do {
     border-radius: 10px;
-    background: #f3f3f3;
     padding: 8px;
+  }
+
+  & to-do input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
   }
 
   & .to-do label {
@@ -375,7 +381,7 @@ div#to-dos {
     appearance: none;
     border-radius: 100%;
     outline: none;
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
     background-color: #f3f3f3;
     cursor: pointer;
     background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="%238A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5"/></svg>');
@@ -413,8 +419,9 @@ span.import-product:hover {
   header.main-heading {
     display: flex;
     padding: 12px 16px;
-    align-items: flex-end;
-    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
     flex: 1 0 0;
 
     & input {
@@ -423,14 +430,17 @@ span.import-product:hover {
     }
   }
 
-  header .profile {
+  header.main-heading .profile {
     padding: 2px;
     gap: 8px;
+
+    & button {
+      background: none;
+    }
 
     & .profile-info {
       width: 32px;
       padding: 2px;
-      align-items: center;
       gap: 8px;
 
       & .davii {
@@ -504,10 +514,44 @@ span.import-product:hover {
     max-width: 336px;
     max-height: 92px;
   }
+
+  div.to-do img {
+    display: none;
+  }
+}
+
+/* SMALLER SCREEN  */
+@media screen and (max-width: 290px) {
+  header.main-heading {
+    gap: 0;
+  }
+}
+
+/* MEDIUM SCREEN */
+@media screen and (min-width: 540px) {
+  header.main-heading {
+    gap: 7rem;
+  }
 }
 
 /* LARGE SCREEN */
 @media screen and (min-width: 768px) {
+  header.main-heading {
+    width: 100%;
+    gap: 8vw;
+
+    & .profile {
+      display: flex;
+      padding: 2px 2px 2px 8px;
+      align-items: flex-start;
+      justify-content: flex-end;
+      gap: 8px;
+      border-radius: 8px;
+      width: 462px;
+      height: 32px;
+    }
+  }
+
   header svg.icon-phone {
     display: none;
   }
@@ -554,12 +598,6 @@ span.import-product:hover {
 
   .cancel-button-phone {
     display: none;
-  }
-
-  div.heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .select-plan {
