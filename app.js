@@ -1,4 +1,36 @@
-// "use strict";
+"use strict";
+
+// Notification bell
+const notificationBell = document.querySelector(".profile svg");
+const notification = document.querySelector("header .notification");
+
+function displayNotification() {
+  document.body.classList.contains("display-my-store") &&
+    document.body.classList.remove("display-my-store");
+
+  return document.body.classList.toggle("display-notification");
+}
+
+notificationBell.addEventListener("click", displayNotification);
+
+// Profile button
+const profileBtn = document.querySelector("header .profile .profile-info");
+const myStore = document.querySelector("header .my-store");
+
+profileBtn.addEventListener("click", function () {
+  document.body.classList.toggle("display-my-store");
+
+  document.body.classList.contains("display-notification") &&
+    document.body.classList.remove("display-notification");
+});
+
+// if (document.body.classList.contains("display-notification")) {
+//   document.body.addEventListener("click", function () {
+//     document.body.classList.remove("display-notification");
+//     console.log(true);
+//     notification.style.display = "block";
+//   });
+// }
 
 // const todos = document.querySelectorAll(".to-dos .to-do"),
 //   writeups = document.querySelectorAll(".write-up");
