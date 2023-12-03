@@ -24,13 +24,9 @@ profileBtn.addEventListener("click", function () {
     document.body.classList.remove("display-notification");
 });
 
-// if (document.body.classList.contains("display-notification")) {
-//   document.body.addEventListener("click", function () {
-//     document.body.classList.remove("display-notification");
-//     console.log(true);
-//     notification.style.display = "block";
-//   });
-// }
+// addGlobalEventListener("click", "body", (e) => {
+//   console.log("hi");
+// });
 
 // const todos = document.querySelectorAll(".to-dos .to-do"),
 //   writeups = document.querySelectorAll(".write-up");
