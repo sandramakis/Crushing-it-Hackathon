@@ -1,34 +1,85 @@
 "use strict";
 
 // Notification bell
-const notificationBell = document.querySelector(".profile svg");
-const notification = document.querySelector("header .notification");
+const notificationBell = document.querySelector(
+  ".profile button#notification-bell"
+);
+const notification = document.querySelector("[role='alert']");
 
+const profileBtn = document.querySelector("header .profile .profile-info");
+const myStore = document.querySelector("header .my-store");
+
+// display notification
 function displayNotification() {
   document.body.classList.contains("display-my-store") &&
     document.body.classList.remove("display-my-store");
 
-  return document.body.classList.toggle("display-notification");
+  document.body.classList.toggle("display-notification");
+
+  // const isExpanded = notificationBell.attributes["aria-expanded"].value;
+
+  // if (isExpanded) {
+  //   notificationBell.ariaExpanded = "false";
+  // } else {
+  //   notificationBell.ariaExpanded = "true";
+  // }
+
+  // console.log(isExpanded);
 }
 
-notificationBell.addEventListener("click", displayNotification);
-
-// Profile button
-const profileBtn = document.querySelector("header .profile .profile-info");
-const myStore = document.querySelector("header .my-store");
-
-profileBtn.addEventListener("click", function () {
+// display myStore
+function displayMyStore() {
   document.body.classList.toggle("display-my-store");
 
   document.body.classList.contains("display-notification") &&
     document.body.classList.remove("display-notification");
+}
+
+// Event listeners
+notificationBell.addEventListener("click", displayNotification);
+profileBtn.addEventListener("click", displayMyStore);
+
+function addGlobalEventListener(type, selector, callback, options) {
+  document.addEventListener(
+    type,
+    (e) => {
+      if (e.target.matches(selector)) callback(e);
+    },
+    options
+  );
+}
+
+addGlobalEventListener(
+  "click",
+  ".main-section",
+  () => {
+    document.body.classList.remove("display-notification");
+  },
+  { once: true }
+);
+
+addGlobalEventListener(
+  "click",
+  "div.heading",
+  () => {
+    document.body.classList.remove("display-notification");
+  },
+  { once: true }
+);
+
+window.addEventListener("keydown", function (e) {
+  // escape notification
+  document.body.classList.contains("display-notification") &&
+    e.key === "Escape" &&
+    document.body.classList.remove("display-notification");
+
+  // escape myStore
+  document.body.classList.contains("display-my-store") &&
+    e.key === "Escape" &&
+    document.body.classList.remove("display-my-store");
 });
 
-// addGlobalEventListener("click", "body", (e) => {
-//   console.log("hi");
-// });
-
-// const todos = document.querySelectorAll(".to-dos .to-do"),
+// const allTodos = document.querySelectorAll(".to-dos .to-do"),
 //   writeups = document.querySelectorAll(".write-up");
 
 // const arrowDown = document.querySelector("#arrow-down");
@@ -51,10 +102,10 @@ profileBtn.addEventListener("click", function () {
 
 // let isClicked = false;
 
-// // function displayTodo(e) {
-// //   todos.forEach((todo, idx) => {
+// function displayTodo(e) {
+//   todos.forEach((todo, idx) => {
 
-// //   });
-// // }
+//   });
+// }
 
 // todos.forEach((todo) => todo.addEventListener("click", displayTodo));
